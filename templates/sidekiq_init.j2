@@ -9,8 +9,8 @@ respawn limit 3 30
 
 normal exit 0 TERM
 
-setuid deploy
-setgid deploy
+setuid {{ deploy_user }}
+setgid {{ deploy_user }}
 
 chdir {{ app_path }}/current/
 
