@@ -1,14 +1,11 @@
 # Ansible role to install Sidekiq
 
-[![Build Status](https://circleci.com/gh/crushlovely/ansible-sidekiq-upstart.svg?style=shield)](https://github.com/crushlovely/ansible-sidekiq-upstart)
-[![Current Version](http://img.shields.io/github/release/crushlovely/ansible-sidekiq-upstart.svg?style=flat)](https://galaxy.ansible.com/list#/users/3804)
-
 This Ansible role installs/updates Sidekiq.  It also copies a working Upstart script.
 
 ## Installation
 
 ``` bash
-$ ansible-galaxy install crushlovely.sidekiq-upstart,v1.0.0
+$ ansible-galaxy install pelf.sidekiq-upstart,v1.0.0
 ```
 
 ## Variables
@@ -16,6 +13,7 @@ $ ansible-galaxy install crushlovely.sidekiq-upstart,v1.0.0
 ``` yaml
 app_name: test
 app_path: /home/ubuntu/test
+deploy_user: deploy
 server_env: qa
 app:
   process_name: "{{ app_name }}"
@@ -28,7 +26,7 @@ Once this role is installed on your system, include it in the roles list of your
 ``` yaml
 - hosts: localhost
   roles:
-    - crushlovely.sidekiq-upstart
+    - pelf.sidekiq-upstart
 ```
 
 ## Dependencies
